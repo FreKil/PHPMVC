@@ -1,4 +1,4 @@
 PHPMVC
 *******
 
-KMOM02 V.01
+KMOM02 V.02

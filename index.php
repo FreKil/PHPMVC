@@ -2,17 +2,17 @@
 
 //----------------------------------------------------------
 // PHASE: BOOTSTRAP
-define('LYDIA_INSTALL_PATH', dirname(__FILE__));
-define('LYDIA_SITE_PATH', LYDIA_INSTALL_PATH . '/site');
+define('DRYGIA_INSTALL_PATH', dirname(__FILE__));
+define('DRYGIA_SITE_PATH', DRYGIA_INSTALL_PATH . '/site');
 
-require(LYDIA_INSTALL_PATH.'/src/CLydia/bootstrap.php');
+require(DRYGIA_INSTALL_PATH.'/src/CLydia/bootstrap.php');
 
-$ly = CLydia::Instance();
+$drygia = CDrygia::Instance();
 
 //----------------------------------------------------------
 // PHASE: FRONTCONTROLLER ROUTE
-$ly->FrontControllerRoute();
+$drygia->FrontControllerRoute();
 
 //----------------------------------------------------------
 // PHASE: THEME ENGINE RENDER
-$ly->ThemeEngineRender();
+$drygia->ThemeEngineRender();

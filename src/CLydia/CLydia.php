@@ -4,19 +4,19 @@
 *
 * @package LydiaCore
 */
-class CLydia implements ISingleton {
+class CDrygia implements ISingleton {
 
 	private static $instance = null;
 	
 	protected function __construct() {
 		// include the site specific config.php and create a ref to $ly to be used by config.php
-		$ly = &$this;
+		$drygia = &$this;
 		require(LYDIA_SITE_PATH.'/config.php');
 	}
 	
 	public static function Instance() {
 		if(self::$instance == null) {
-			self::$instance = new CLydia();
+			self::$instance = new CDrygia();
 		}
 		return self::$instance;
 	}
@@ -71,14 +71,14 @@ class CLydia implements ISingleton {
 	public function ThemeEngineRender() {
 		// Get the paths and settings for the theme
 		$themeName    = $this->config['theme']['name'];
-		$themePath    = LYDIA_INSTALL_PATH . "/themes/{$themeName}";
+		$themePath    = DRYGIA_INSTALL_PATH . "/themes/{$themeName}";
 		$themeUrl = $this->request->base_url . "themes/{$themeName}";
    
 		// Add stylesheet path to the $ly->data array
 		$this->data['stylesheet'] = "{$themeUrl}/style.css";
 
 		// Include the global functions.php and the functions.php that are part of the theme
-		$ly = &$this;
+		$drygia = &$this;
 		$functionsPath = "{$themePath}/functions.php";
 		if(is_file($functionsPath)) {
 			include $functionsPath;
